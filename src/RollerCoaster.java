@@ -1,4 +1,5 @@
 import java.text.MessageFormat;
+import java.util.Random;
 import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.ReentrantLock;
 
@@ -69,6 +70,24 @@ public class RollerCoaster
             System.out.println(MessageFormat.format("cart {0} created", i));
             cart.start();
         }
+    }
+    
+    private void CreatePassengers () throws InterruptedException
+    {
+        Random arriveTime = new Random();
+        float arriveTimeSec;
+
+        int i;
+        for(i = 0; i < passengerNumber; i++)
+        {
+            arriveTimeSec = (arriveTime.nextFloat() * 2) + 1;
+            Thread.sleep((long)(arriveTimeSec * 1000));
+            // Thread passenger = new Thread(new P((i + 1), this));
+            // System.out.println("Passageiro " + (i + 1) + " chegou na fila");
+			// p.start();
+        }
+
+
     }
 
     public boolean Load(int id)
