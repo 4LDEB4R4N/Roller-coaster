@@ -1,4 +1,5 @@
-public class Cart implements Runnable{
+public class Cart implements Runnable
+{
 
 	private int id;
 	private RollerCoaster RC;
