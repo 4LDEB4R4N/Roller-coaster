@@ -16,8 +16,8 @@ public class Passenger implements Runnable
     {
         try
         {
-			RC.Load(id);
-			RC.Unload(id);
+			RC.WaitLoad(id);
+			RC.WaitUnload(id);
 		}
         catch (InterruptedException e)
         {
