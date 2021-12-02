@@ -82,12 +82,10 @@ public class RollerCoaster
         {
             arriveTimeSec = (arriveTime.nextFloat() * 2) + 1;
             Thread.sleep((long)(arriveTimeSec * 1000));
-            // Thread passenger = new Thread(new P((i + 1), this));
-            // System.out.println("Passageiro " + (i + 1) + " chegou na fila");
-			// p.start();
+            Thread passenger = new Thread(new Passenger(this, i));
+            System.out.println(MessageFormat.format("Passageiro {0} chegou na fila", i));
+			passenger.start();
         }
-
-
     }
 
     public boolean Load(int id)
